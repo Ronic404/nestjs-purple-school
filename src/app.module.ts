@@ -14,7 +14,7 @@ import { TopPageModule } from './top-page/top-page.module'
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot('mongodb://localhost/test'),
+    MongooseModule.forRoot('mongodb://localhost:27017/mongo'),
     AuthModule,
     UsersModule,
     ReviewModule,
