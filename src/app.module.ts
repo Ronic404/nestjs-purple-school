@@ -7,6 +7,7 @@ import { AppController } from './app.controller'
 
 import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './users/users.module'
+import { JwtStrategy } from './auth/strategies/jwt.strategy'
 import { ReviewModule } from './review/review.module'
 import { ProductModule } from './product/product.module'
 import { TopPageModule } from './top-page/top-page.module'
@@ -14,7 +15,7 @@ import { TopPageModule } from './top-page/top-page.module'
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot('mongodb://localhost:27017/mongo'),
+    MongooseModule.forRoot('mongodb://localhost/test'),
     AuthModule,
     UsersModule,
     ReviewModule,
@@ -22,6 +23,6 @@ import { TopPageModule } from './top-page/top-page.module'
     TopPageModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy],
 })
 export class AppModule {}
