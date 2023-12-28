@@ -12,7 +12,6 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 
-import { UserEmail } from 'src/decorators/user-email.decorator'
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guard'
 import { ReviewService } from './review.service'
 import { CreateReviewDto } from './dto/create-review.dto'
@@ -37,9 +36,8 @@ export class ReviewController {
     }
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get('byProduct/:productId')
-  async getByProduct(@Param('productId') productId: string, @UserEmail() email: string) {
+  async getByProduct(@Param('productId') productId: string) {
     return this.reviewService.findByProductId(productId)
   }
 }
