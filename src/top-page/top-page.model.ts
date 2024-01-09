@@ -43,7 +43,7 @@ export class TopPageModel extends Document {
   @Prop({ unique: true })
   alias: string
 
-  @Prop()
+  @Prop({ text: true })
   title: string
 
   @Prop()
@@ -66,3 +66,4 @@ export class TopPageModel extends Document {
 }
 
 export const TopPageModelSchema = SchemaFactory.createForClass(TopPageModel)
+TopPageModelSchema.index({ title: 'text', seoText: 'text' })
