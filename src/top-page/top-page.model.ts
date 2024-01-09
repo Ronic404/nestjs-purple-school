@@ -1,4 +1,4 @@
-import { Document } from 'mongoose'
+import { Document, HydratedDocument } from 'mongoose'
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 export enum TopLevelCategory {
@@ -7,6 +7,8 @@ export enum TopLevelCategory {
   Books,
   Products,
 }
+
+export type TopPageDocument = HydratedDocument<TopPageModel>
 
 export class HhData {
   @Prop()
