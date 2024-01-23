@@ -12,6 +12,7 @@ import { JwtStrategy } from './auth/strategies/jwt.strategy'
 import { ReviewModule } from './review/review.module'
 import { ProductModule } from './product/product.module'
 import { TopPageModule } from './top-page/top-page.module'
+import { SitemapModule } from './sitemap/sitemap.module'
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { TopPageModule } from './top-page/top-page.module'
     ProductModule,
     TopPageModule,
     FilesModule,
+    SitemapModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtStrategy],

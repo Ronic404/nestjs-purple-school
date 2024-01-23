@@ -40,6 +40,9 @@ export class TopPageModel extends Document {
   @Prop()
   secondCategory: string
 
+  @Prop()
+  updatedAt: string
+
   @Prop({ unique: true })
   alias: string
 
